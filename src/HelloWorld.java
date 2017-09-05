@@ -1,6 +1,10 @@
 
 public class HelloWorld {
 
+	
+	final int DIAS_SEMANA = 7;
+	
+	
 	/**
 	 * @param args
 	 */
