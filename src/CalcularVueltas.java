@@ -25,14 +25,15 @@
  * */
 public class CalcularVueltas {
 	
-	
+	final double [] BILLETES_MONEDAS= {50,20,10,5,2,1,0.5,0.2,0.1,0.05,0.02,0.01};
 	
 	public static void main(String[] args) {
 		
 		double compraTotal=1326.24;
+		double gasto= 4*500;
 		double [] billetes = {500,50,20,10,5};
 		double [] monedas = {2,1,0.5,0.2,0.1,0.05,0.02,0.01};
-		double vueltas=(billetes[0]*4)-compraTotal;
+		double vueltas=gasto-compraTotal;
 		
 		int []numBilletesUsados= {0,0,0,0,0};
 		int []numMonedasUsados= {0,0,0,0,0,0,0,0};
@@ -88,7 +89,6 @@ public class CalcularVueltas {
 		}
 		
 		
-		System.out.println(vueltas);
 		System.out.println("Billetes de 50 " +numBilletesUsados[1]);
 		System.out.println("Billetes de 20 " +numBilletesUsados[2]);
 		System.out.println("Billetes de 10 " +numBilletesUsados[3]);
