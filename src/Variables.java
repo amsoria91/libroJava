@@ -85,11 +85,6 @@ public class Variables {
 		System.out.println("4.Caracteres: ");
 		System.out.println();
 		
-		char nuevoChar='a';
-		char nuevoChar2='F';
-		char nuevoChar3='3';
-		char nuevoChar4='j';
-		
 		char [] chars= {'a','F','3','j'};
 	
 		char cruz = '\u2717';
