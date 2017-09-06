@@ -90,14 +90,18 @@ public class JugandoconString {
 		//indicar el numero de veces que aparece 'at'
 		
 		int contadorAt=0;
+		char constantT='t';
+		String palabraAt="at";
+		
 		
 		for (int i = 0; i < lorem.length(); i++) {
 			
 			
-			if(lorem.charAt(i)=='a') {
+			if ((lorem.charAt(i)==vocalA) && (lorem.charAt(i)==constantT)){
 				
 				contadorAt++;
 			}
+			
 		}
 		
 		System.out.println(contadorAt+"'at'");
