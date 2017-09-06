@@ -28,34 +28,31 @@ public class CalcularVueltas {
 	final static float [] BILLETES_MONEDAS= {50f,20f,10f,5f,2f,1f,0.5f,0.2f,0.1f,0.05f,0.02f,0.01f};
 	static float compraTotal=1326.24f;
 	static float vueltas=673.76f;
-	
-	static int []numDineroUsado= {0,0,0,0,0,0,0,0,0,0,0,0};
+	static int []contDineroUsado= {0,0,0,0,0,0,0,0,0,0,0,0};
 	
 	public static void main(String[] args) {
-		
-		
 		
 		for (int i = 0; i < BILLETES_MONEDAS.length; i++) {
 			
 			while(vueltas-BILLETES_MONEDAS[i]>=0) {
 				
 				vueltas=vueltas-BILLETES_MONEDAS[i];
-				numDineroUsado[i]++;
+				contDineroUsado[i]++;
 			}
 		}
 		
-		System.out.println("Billetes de 50: " +numDineroUsado[0]);
-		System.out.println("Billetes de 20: " +numDineroUsado[1]);
-		System.out.println("Billetes de 10: " +numDineroUsado[2]);
-		System.out.println("Billetes de 5: " +numDineroUsado[3]);
-		System.out.println("Monedas de 2: "+numDineroUsado[4]);
-		System.out.println("Monedas de 1: "+numDineroUsado[5]);
-		System.out.println("Monedas de 0.50: "+numDineroUsado[6]);
-		System.out.println("Monedas de 0.20: "+numDineroUsado[7]);
-		System.out.println("Monedas de 0.10: "+numDineroUsado[8]);
-		System.out.println("Monedas de 0.5: "+numDineroUsado[9]);
-		System.out.println("Monedas de 0.02: "+numDineroUsado[10]);
-		System.out.println("Monedas de 0.01: "+numDineroUsado[11]);
+		System.out.println("Billetes de 50: " +contDineroUsado[0]);
+		System.out.println("Billetes de 20: " +contDineroUsado[1]);
+		System.out.println("Billetes de 10: " +contDineroUsado[2]);
+		System.out.println("Billetes de 5: " +contDineroUsado[3]);
+		System.out.println("Monedas de 2: "+contDineroUsado[4]);
+		System.out.println("Monedas de 1: "+contDineroUsado[5]);
+		System.out.println("Monedas de 0.50: "+contDineroUsado[6]);
+		System.out.println("Monedas de 0.20: "+contDineroUsado[7]);
+		System.out.println("Monedas de 0.10: "+contDineroUsado[8]);
+		System.out.println("Monedas de 0.5: "+contDineroUsado[9]);
+		System.out.println("Monedas de 0.02: "+contDineroUsado[10]);
+		System.out.println("Monedas de 0.01: "+contDineroUsado[11]);
 		
 	}
 	
