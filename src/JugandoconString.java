@@ -92,19 +92,25 @@ public class JugandoconString {
 		int contadorAt=0;
 		char constantT='t';
 		String palabraAt="at";
+		int index=0;
 		
 		
-		for (int i = 0; i < lorem.length(); i++) {
+		while(index!=-1) {
 			
+			index=lorem.indexOf(palabraAt);
 			
-			if ((lorem.charAt(i)==vocalA) && (lorem.charAt(i)==constantT)){
+			if(index!=-1) {
 				
 				contadorAt++;
+				lorem = lorem.substring(index);
 			}
 			
-		}
+			
+			}
+			
+		System.out.println(contadorAt);
 		
-		System.out.println(contadorAt+"'at'");
+	
 	}
 
 	
