@@ -16,7 +16,8 @@ public class Ahorcado {
 		int numTecleado = 0;
 		int vidas = 3;
 		boolean numCorrecto = false;
-
+		
+		//Mientras tengas vidas sigue jugando
 		while (vidas > 0) {
 
 			System.out.println("Teclee el numero a adivinar");
