@@ -17,7 +17,6 @@ public class Ahorcado {
 		int vidas = 3;
 		boolean numCorrecto = false;
 
-
 		while (vidas > 0) {
 
 			System.out.println("Teclee el numero a adivinar");
@@ -41,23 +40,24 @@ public class Ahorcado {
 
 			} while (!numCorrecto);
 
-
+			// Si numero tecleado es igual al numero a adivinar ganas
 			if (numTecleado == numAdivinar) {
 
 				System.out.println("Enhorabuena has ganado!");
-				
+
 				System.out.println("¿Quieres jugar otra vez? (S/N)");
-				
+
 				String respuesta = sc.next();
-				
+
 				if ("s".equalsIgnoreCase(respuesta)) {
-					
-					vidas=3;
+
+					// si respuesta es "s" reinicia vidas
+					vidas = 3;
 					numAdivinar = (int) (Math.random() * 10 + 1);
-					
-				}else {
-					
-					vidas=0;
+
+				} else {
+
+					vidas = 0;
 				}
 
 			} else {
@@ -67,25 +67,26 @@ public class Ahorcado {
 
 					System.out.println("Intentalo otra vez, te quedan " + vidas + " vidas");
 				}
-				
+
 				if (vidas == 0) {
 
 					System.out.println("Has Perdido!!");
-					
+
 					System.out.println("¿Quieres jugar otra vez? (S/N)");
-					
+
 					String respuesta = sc.next();
-					
+
 					if ("s".equalsIgnoreCase(respuesta)) {
-						
-						vidas=3;
+
+						// si respuesta es "s" reinicia vidas
+						vidas = 3;
 						numAdivinar = (int) (Math.random() * 10 + 1);
-						
+
 					}
 				}
 
 			}
-			
+
 		}
 
 		System.out.println("Fin de la partida");
