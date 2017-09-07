@@ -44,6 +44,8 @@ public class CalcularIva {
 		System.out.println();
 
 		System.out.println("Gracias por venir");
+		
+		sc.close();
 
 	}
 }
