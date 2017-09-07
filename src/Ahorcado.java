@@ -12,7 +12,7 @@ public class Ahorcado {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		int numAdivinar = (int) (Math.random() * 10 + 1);
+		int numAdivinar = (int) (Math.random() * 9 + 1);
 		int numTecleado = 0;
 		int vidas = 3;
 		boolean numCorrecto = false;
@@ -54,6 +54,7 @@ public class Ahorcado {
 				if ("s".equalsIgnoreCase(respuesta)) {
 					
 					vidas=3;
+					numAdivinar = (int) (Math.random() * 10 + 1);
 					
 				}else {
 					
@@ -79,6 +80,7 @@ public class Ahorcado {
 					if ("s".equalsIgnoreCase(respuesta)) {
 						
 						vidas=3;
+						numAdivinar = (int) (Math.random() * 10 + 1);
 						
 					}
 				}
