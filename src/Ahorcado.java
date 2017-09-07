@@ -41,7 +41,6 @@ public class Ahorcado {
 
 			} while (!numCorrecto);
 
-			// numTecleado = sc.nextInt();
 
 			if (numTecleado == numAdivinar) {
 
