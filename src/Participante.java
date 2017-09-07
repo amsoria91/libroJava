@@ -3,6 +3,7 @@ public class Participante {
 
 	// Atributos
 
+	
 	private String nombre;
 	private String usuarioGit;
 	private String email;
@@ -20,7 +21,6 @@ public class Participante {
 
 	public Participante() {
 		super();
-		//TODO implementar
 		this.nombre="";
 		this.usuarioGit = "";
 		this.email = "";
@@ -68,6 +68,11 @@ public class Participante {
 		String resul = "https://github.com/" + this.usuarioGit;
 
 		return resul;
+	}
+
+	public String toString() {
+		return "Participante [nombre=" + this.nombre + ", usuarioGit=" + this.usuarioGit + ", email=" + this.email + ", trabajador="
+				+ this.trabajador + "]";
 	}
 
 }
