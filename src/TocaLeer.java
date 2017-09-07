@@ -20,22 +20,7 @@ public class TocaLeer {
 				            "Yeray",
 				            "German"};*/
 	
-	 
-	 
-	 
-	 
-	 
-		
-	 
-	
-	 
-	
-
-
-	 
-	 
-
-	static Participante[]alumnos = new Participante[15];
+	 static Participante[]alumnos = new Participante[15];
 	
 	
 	public static void main(String[] args) {
