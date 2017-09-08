@@ -5,25 +5,24 @@ public class MenuCanciones {
 
 	static Scanner sc = new Scanner(System.in);
 	static Cancion cancion;
-	static ArrayList<Cancion> canciones;//=new ArrayList<Cancion>();
+	static ArrayList<Cancion> canciones;// =new ArrayList<Cancion>();
 	static final int OP_LISTAR = 1;
 	static final int OP_ELIMINAR = 2;
 	static final int OP_CREAR = 3;
 	static final int OP_DETALLE = 4;
 	static final int OP_SALIR = 5;
+	boolean tryCatch = false;
 
 	static int opcionSeleccionada = 1;
-
-	
 
 	public static void main(String[] args) {
 
 		inicializarCanciones();
 		mostrarMenu();
 		pedirOpcion();
-		
-		while(opcionSeleccionada!=OP_SALIR) {
-			
+
+		while (opcionSeleccionada != OP_SALIR) {
+
 			switch (opcionSeleccionada) {
 			case OP_LISTAR:
 				listarCanciones();
@@ -59,20 +58,25 @@ public class MenuCanciones {
 				pedirOpcion();
 
 				break;
-				
-				default:
+
+			default:
 				break;
 			}
 		}
 		
-		sc.close();
+		if(opcionSeleccionada==OP_SALIR) {
+			
+			System.out.println("Menu de canciones cerrado.");
+			
+		}
 
+		sc.close();
 	}
-	
+
 	private static void inicializarCanciones() {
 
 		canciones = new ArrayList<Cancion>();
-		
+
 		canciones.add(new Cancion("c1", "c1", "c1"));
 		canciones.add(new Cancion("c2", "c2", "c2"));
 		canciones.add(new Cancion("c3", "c3", "c3"));
@@ -87,13 +91,13 @@ public class MenuCanciones {
 
 	private static void pedirOpcion() {
 
-		Scanner sc = new Scanner(System.in);
+		
 		opcionSeleccionada = sc.nextInt();
-
+		
 	}
 
 	private static void mostrarMenu() {
-
+		System.out.println();
 		System.out.println("Gestor Canciones");
 		System.out.println("---------------------------");
 		System.out.println(" 1. Listar ");
@@ -103,15 +107,16 @@ public class MenuCanciones {
 		System.out.println(" 5. Salir ");
 		System.out.println("---------------------------");
 		System.out.println("Selecciona una opcion del 1 al 5");
+		System.out.println();
 
 	}
 
 	public static void anadirCanciones(Cancion cancion) {
-		
-		Scanner sc = new Scanner(System.in);
+
 
 		canciones.add(cancion);
 		listarCanciones();
+		
 	}
 
 	public static void eliminarCanciones(int indice) {
