@@ -5,13 +5,13 @@ public class MenuCanciones {
 
 	static Scanner sc = new Scanner(System.in);
 	static Cancion cancion;
-	static ArrayList<Cancion> canciones;// =new ArrayList<Cancion>();
+	static ArrayList<Cancion> canciones;
 	static final int OP_LISTAR = 1;
 	static final int OP_ELIMINAR = 2;
 	static final int OP_CREAR = 3;
 	static final int OP_DETALLE = 4;
 	static final int OP_SALIR = 5;
-	boolean tryCatch = false;
+	// boolean tryCatch = false;
 
 	static int opcionSeleccionada = 1;
 
@@ -63,16 +63,19 @@ public class MenuCanciones {
 				break;
 			}
 		}
-		
-		if(opcionSeleccionada==OP_SALIR) {
-			
+
+		if (opcionSeleccionada == OP_SALIR) {
+
 			System.out.println("Menu de canciones cerrado.");
-			
+
 		}
 
 		sc.close();
 	}
 
+	/**
+	 * Metodo que inicializa las canciones
+	 */
 	private static void inicializarCanciones() {
 
 		canciones = new ArrayList<Cancion>();
@@ -89,13 +92,9 @@ public class MenuCanciones {
 		canciones.add(new Cancion("c10", "c10", "c10"));
 	}
 
-	private static void pedirOpcion() {
-
-		
-		opcionSeleccionada = sc.nextInt();
-		
-	}
-
+	/**
+	 * Metodo que despliega el menu de canciones
+	 */
 	private static void mostrarMenu() {
 		System.out.println();
 		System.out.println("Gestor Canciones");
@@ -111,19 +110,42 @@ public class MenuCanciones {
 
 	}
 
-	public static void anadirCanciones(Cancion cancion) {
+	/**
+	 * Metodo con el cual seleccionas la opcion del menu a desplegar
+	 */
+	private static void pedirOpcion() {
 
+		opcionSeleccionada = sc.nextInt();
+
+	}
+
+	/**
+	 * Metodo que añade una cancion a la lista de canciones
+	 * 
+	 * @param cancion
+	 *            Es el objeto de tipo cancion que añadimos a la lista
+	 */
+	public static void anadirCanciones(Cancion cancion) {
 
 		canciones.add(cancion);
 		listarCanciones();
-		
+
 	}
 
+	/**
+	 * Metodo que elimina una cancion de la lista de canciones
+	 * 
+	 * @param indice
+	 *            Es el numero de la posicion de la lista que queremos eliminar
+	 */
 	public static void eliminarCanciones(int indice) {
 
 		canciones.remove(indice);
 	}
 
+	/**
+	 * Metodo que muestra por pantalla los titulos de las canciones
+	 */
 	public static void listarCanciones() {
 
 		for (int i = 0; i < canciones.size(); i++) {
@@ -131,6 +153,10 @@ public class MenuCanciones {
 		}
 	}
 
+	/**
+	 * Metodo que muestra por pantalla los detalles de las
+	 * canciones(artista,duracion)
+	 */
 	public static void mostrarDetalles() {
 
 		for (int i = 0; i < canciones.size(); i++) {
