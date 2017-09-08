@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Canciones {
+public class Cancion {
 
 	private String titulo;
 	private String artista;
@@ -10,7 +10,7 @@ public class Canciones {
 	
 	
 	
-	public Canciones(String titulo, String artista, String minutos) {
+	public Cancion(String titulo, String artista, String minutos) {
 		super();
 		this.titulo = titulo;
 		this.artista = artista;
@@ -41,14 +41,21 @@ public class Canciones {
 		this.minutos = minutos;
 	}
 	
-	String listarCanciones() {
+	String mostrarDetalles() {
 		
-		String resul="Canciones: Titulo-> "+this.getTitulo()+" Artista-> "+this.getArtista()+" Minutos->"+this.minutos;
+		String resul="Titulo\t"+this.getTitulo()+"\tArtista\t\t"+this.getArtista()+"\tDuracion\t"+this.minutos;
 		
 		return resul;
 	}
 	
-	public void anadirCanciones(Canciones cancion) {
+	String listarCanciones() {
+		
+		String resul="Titulo\t"+this.getTitulo()+ "\treproduciendo...";
+		
+		return resul;
+	}
+	
+	public void anadirCanciones(Cancion cancion) {
 		
 		
 	}
@@ -59,7 +66,5 @@ public class Canciones {
 		
 		return resul;
 	}
-	public static void main(String[] args) {
 	
-	}
 }
