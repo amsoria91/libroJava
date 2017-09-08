@@ -115,8 +115,24 @@ public class MenuCanciones {
 	 */
 	private static void pedirOpcion() {
 
-		opcionSeleccionada = sc.nextInt();
+		boolean opcionCorrecta = false;
+		while (!opcionCorrecta) {
+			try {
 
+				Scanner sc= new Scanner(System.in);
+				opcionSeleccionada = sc.nextInt();
+				if(opcionSeleccionada>=1&&opcionSeleccionada<=5) {
+				opcionCorrecta = true;
+				}else {
+					
+					System.out.println("Selecciona una opcion valida");
+				}
+			} catch (Exception e) {
+
+				System.out.println("Selecciona una opcion valida");
+			}
+
+		}
 	}
 
 	/**
@@ -139,8 +155,16 @@ public class MenuCanciones {
 	 *            Es el numero de la posicion de la lista que queremos eliminar
 	 */
 	public static void eliminarCanciones(int indice) {
-
-		canciones.remove(indice);
+		
+		if(indice>=0&&indice<=canciones.size()) {
+			
+			canciones.remove(indice);
+			
+		}else {
+			
+			System.out.println("No existe la cancion");
+		}
+		
 	}
 
 	/**
