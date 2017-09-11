@@ -1,4 +1,8 @@
 package com.ipartek.formacion.javalibro.ejercicios;
+
+import com.ipartek.formacion.javalibro.excepciones.ParticipanteException;
+import com.ipartek.formacion.javalibro.pojo.Participante;
+
 /**
  * Las variables primitivas se pasan por valor Las variables de clase se pasan
  * por referencia
@@ -8,22 +12,21 @@ package com.ipartek.formacion.javalibro.ejercicios;
  */
 public class VariablesReferenciaYvalor {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParticipanteException {
 
 		// Las variables primitivas se pasan por valor
 		int primitiva = 1;
-		System.out.println("primitiva = " + primitiva);
 		int primitiva2 = sumar(primitiva);
 		System.out.println("primitiva = " + primitiva);
 		System.out.println("primitiva2 = " + primitiva2);
 
-		// TODO probarlo bien para que cambien el valor las dos variables
 		// Las variables de clase se pasan por referencia
 
-		String referencia = "1";
-		String referencia2 = sumar(referencia);
-		System.out.println("referencia= " + referencia);
-		System.out.println("referencia2= " + referencia2);
+		Participante p1 = new Participante("Manolo", 18);
+		Participante p2 = sumar(p1);
+
+		System.out.println("referencia= " + p1.getEdad());
+		System.out.println("referencia2= " + p2.getEdad());
 
 	}
 
@@ -33,11 +36,10 @@ public class VariablesReferenciaYvalor {
 
 	}
 
-	static String sumar(String s) {
+	static Participante sumar(Participante p) throws ParticipanteException {
 
-		s = "2";
-
-		return s;
+		p.setEdad(p.getEdad() + 1);
+		return p;
 
 	}
 

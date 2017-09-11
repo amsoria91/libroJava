@@ -79,11 +79,11 @@ public class Participante {
 		return resul;
 	}
 
-	int getEdad() {
+	public int getEdad() {
 		return edad;
 	}
 
-	void setEdad(int edad) throws ParticipanteException {
+	public void setEdad(int edad) throws ParticipanteException {
 
 		if (edad < 0) {
 
