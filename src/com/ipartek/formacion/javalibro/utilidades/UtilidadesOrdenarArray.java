@@ -15,7 +15,7 @@ public class UtilidadesOrdenarArray {
 		int[] resul = aDesordenado;
 		int numeroApoyo = 0;
 		
-		if(orden=false) {
+		if(orden=true) {
 			for (int i = 0; i < resul.length; i++) {
 
 				for (int j = 0; j < resul.length-1; j++) {
