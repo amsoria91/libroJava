@@ -1,3 +1,4 @@
+package com.ipartek.formacion.javalibro.excepciones;
 /**
  * 
  * Exception personalizada para el POJO(Plain old Java Object) de Participante

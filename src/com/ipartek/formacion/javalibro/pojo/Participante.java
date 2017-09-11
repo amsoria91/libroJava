@@ -1,3 +1,5 @@
+package com.ipartek.formacion.javalibro.pojo;
+import com.ipartek.formacion.javalibro.excepciones.ParticipanteException;
 
 public class Participante {
 
@@ -36,7 +38,7 @@ public class Participante {
 
 	// getters y setters
 
-	String getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 

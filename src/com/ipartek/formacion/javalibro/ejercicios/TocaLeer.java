@@ -1,3 +1,6 @@
+package com.ipartek.formacion.javalibro.ejercicios;
+import com.ipartek.formacion.javalibro.pojo.Participante;
+
 
 public class TocaLeer {
 
@@ -69,3 +72,4 @@ public class TocaLeer {
 	}
 
 }
+

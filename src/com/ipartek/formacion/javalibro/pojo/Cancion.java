@@ -1,3 +1,4 @@
+package com.ipartek.formacion.javalibro.pojo;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -41,14 +42,14 @@ public class Cancion {
 		this.minutos = minutos;
 	}
 	
-	String mostrarDetalles() {
+	public String mostrarDetalles() {
 		
 		String resul="Titulo\t"+this.getTitulo()+"\tArtista\t\t"+this.getArtista()+"\tDuracion\t"+this.minutos;
 		
 		return resul;
 	}
 	
-	String listarCanciones() {
+	public String listarCanciones() {
 		
 		String resul="Titulo\t"+this.getTitulo()+ "\treproduciendo...";
 		
