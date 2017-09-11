@@ -19,7 +19,7 @@ public class UtilidadesOrdenarArrayTest extends TestCase {
 		
 		int[] ordenadorMayorMenor = UtilidadesOrdenarArray.ordenarArray(aDesordando, false);
 		
-		for (int i = ordenadorMayorMenor.length-1; i >0; i--) {
+		for (int i = ordenadorMayorMenor.length-1; i <=0; i--) {
 			assertEquals(i, ordenadorMayorMenor[i]);
 		}
 		

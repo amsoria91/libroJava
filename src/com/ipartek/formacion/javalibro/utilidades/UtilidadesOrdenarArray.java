@@ -33,9 +33,9 @@ public class UtilidadesOrdenarArray {
 			}
 		}else {
 			
-			for (int i = resul.length-1; i >=0; i--) {
+			for (int i = resul.length-1; i <=0; i--) {
 
-				for (int j = resul.length-1; j >0; j--) {
+				for (int j = resul.length-1; j <=0; j--) {
 
 					if (resul[j] > resul[j-1]) {
 
