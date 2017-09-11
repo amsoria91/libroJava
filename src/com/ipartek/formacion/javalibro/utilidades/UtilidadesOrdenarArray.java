@@ -1,6 +1,6 @@
 package com.ipartek.formacion.javalibro.utilidades;
 
-public class OrdenarArray {
+public class UtilidadesOrdenarArray {
 
 	
 	/**
