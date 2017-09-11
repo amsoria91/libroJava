@@ -3,28 +3,35 @@ public class Participante {
 
 	// Atributos
 
-	
 	private String nombre;
 	private String usuarioGit;
 	private String email;
 	private boolean trabajador;
+	private int edad;
 
 	// Constructores
 
-	public Participante(String nombre, String usuarioGit) {
-		super();
-		this.nombre = nombre;
-		this.usuarioGit = usuarioGit;
-		this.email = " ";
-		this.trabajador = false;
-	}
-
 	public Participante() {
 		super();
-		this.nombre="";
+		this.nombre = "";
 		this.usuarioGit = "";
 		this.email = "";
 		this.trabajador = false;
+		this.edad = 0;
+	}
+
+	public Participante(String nombre, String usuarioGit) {
+		this();
+		this.nombre = nombre;
+		this.usuarioGit = usuarioGit;
+
+	}
+
+	public Participante(String nombre, int edad) throws ParticipanteException {
+		this();
+		this.nombre = nombre;
+		this.setEdad(edad);
+
 	}
 
 	// getters y setters
@@ -70,9 +77,30 @@ public class Participante {
 		return resul;
 	}
 
+	int getEdad() {
+		return edad;
+	}
+
+	void setEdad(int edad) throws ParticipanteException {
+
+		if (edad < 0) {
+
+			throw new ParticipanteException(ParticipanteException.EXCEPTION_MENOR_CERO);
+		}
+
+		if (edad > 100) {
+
+			throw new ParticipanteException(ParticipanteException.EXCEPTION_MAYOR_CIEN);
+		}
+
+		this.edad = edad;
+
+	}
+
+	@Override
 	public String toString() {
-		return "Participante [nombre=" + this.nombre + ", usuarioGit=" + this.usuarioGit + ", email=" + this.email + ", trabajador="
-				+ this.trabajador + "]";
+		return "Participante [nombre=" + nombre + ", usuarioGit=" + usuarioGit + ", email=" + email + ", trabajador="
+				+ trabajador + ", edad=" + edad + "]";
 	}
 
 }
