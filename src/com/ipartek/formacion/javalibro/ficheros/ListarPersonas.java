@@ -46,7 +46,7 @@ public class ListarPersonas {
 			System.out.println(contPers+" linea leidas");
 			
 
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException  e) {
 			e.printStackTrace();
 
 		} finally {
@@ -57,7 +57,7 @@ public class ListarPersonas {
 				fr.close();
 
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 		}

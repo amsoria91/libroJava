@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * Pide por pantalla:
@@ -23,27 +24,44 @@ import java.io.IOException;
  */
 public class CrearFicheroYDirectorio {
 
-	static File carpeta = new File("C:\\Directorio");
+	static File carpeta;
 	static FileWriter fw = null;
 	static BufferedWriter bw = null;
 	static FileReader fr = null;
 	static BufferedReader br = null;
 	static String linea = "";
-	static String fichero="\\prueba.txt";
-	;
+	static Scanner sc= new Scanner(System.in);
+	static File rutaFichero=null;
 
 	public static void crearFichero() {
 
-		carpeta.mkdir();
+		System.out.println("Escribe la ruta de la carpeta con formato: 'C:\\\\yyyyyy'");
+		carpeta= new File(sc.nextLine());
+		
+		if(carpeta.exists()) {
+			
+			System.out.println("Ya existe una carpeta con ese nombre y en esa ruta");
+			
+		}else {
+			
+			carpeta.mkdir();
+			
+		}
+		
 	}
 
 	public static void escribirFichero() {
 
 		try {
-			fw = new FileWriter(carpeta + fichero);
+			System.out.println("Escribe el nombre del txt(sin escribir ruta ni .txt)");
+			
+			rutaFichero= new File(carpeta+"\\"+sc.nextLine()+".txt");
+			
+			fw = new FileWriter(rutaFichero);
 			bw = new BufferedWriter(fw);// Siempre vamos a trabajar con el Buffer
-
-			bw.write("Esto se escribe");
+			
+			System.out.println("Escribe dentro del txt");
+			bw.write(sc.nextLine());
 
 			System.out.println("Fichero creado con exito");
 			System.out.println("------------------------");
@@ -65,51 +83,10 @@ public class CrearFicheroYDirectorio {
 		}
 	}
 
-	public static void leerFichero() {
-
-		try {
-
-			fr = new FileReader(carpeta + "\\prueba.txt");
-			br = new BufferedReader(fr);
-
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try {
-			while (linea != null) {
-
-				linea = br.readLine();
-
-				if (linea != null) {
-					
-					System.out.println("Texto a leer");
-					System.out.println("------------");
-					System.out.println("Carpeta: "+carpeta.getName());
-					System.out.println("------------");
-					System.out.println("Fichero: prueba.txt");
-					System.out.println("------------");
-					System.out.println("Texto en fichero: "+linea);
-
-				}
-			}
-
-			br.close();
-			fr.close();
-
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-
-		}
-
-	}
-
 	public static void main(String[] args) {
 
 		crearFichero();
 		escribirFichero();
-		leerFichero();
 	}
 
 }
