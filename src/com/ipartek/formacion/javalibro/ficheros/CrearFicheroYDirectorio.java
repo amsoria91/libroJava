@@ -30,6 +30,7 @@ public class CrearFicheroYDirectorio {
 	static BufferedReader br = null;
 	static String linea = "";
 	static String fichero="\\prueba.txt";
+	;
 
 	public static void crearFichero() {
 
@@ -84,8 +85,11 @@ public class CrearFicheroYDirectorio {
 					
 					System.out.println("Texto a leer");
 					System.out.println("------------");
-					
-					System.out.println(linea);
+					System.out.println("Carpeta: "+carpeta.getName());
+					System.out.println("------------");
+					System.out.println("Fichero: prueba.txt");
+					System.out.println("------------");
+					System.out.println("Texto en fichero: "+linea);
 
 				}
 			}
