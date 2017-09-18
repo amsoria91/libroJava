@@ -1,8 +1,9 @@
 package com.ipartek.formacion.javalibro.pojo;
 
 import com.ipartek.formacion.javalibro.excepciones.ParticipanteException;
+import com.ipartek.formacion.javalibro.pojo.interfaces.Imprimible;
 
-public class Participante {
+public class Participante implements Imprimible{
 
 	// Atributos
 

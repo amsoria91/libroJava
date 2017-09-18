@@ -1,11 +1,14 @@
 package com.ipartek.formacion.javalibro.pojo;
 
-public class Libro {
+import com.ipartek.formacion.javalibro.pojo.interfaces.Imprimible;
+import com.ipartek.formacion.javalibro.pojo.interfaces.Vendible;
+
+public class Libro implements Imprimible, Vendible {
 
 	private String titulo;
 	private String autor;
 	private int numPaginas;
-	
+
 	public Libro(String titulo) {
 		super();
 		this.titulo = titulo;
@@ -34,21 +37,41 @@ public class Libro {
 	}
 
 	public void setNumPaginas(int numPaginas) {
-		this.numPaginas = numPaginas;
+
+		if (numPaginas > 0) {
+			this.numPaginas = numPaginas;
+
+		} else {
+
+			this.numPaginas = 0;
+		}
 	}
 
 	@Override
 	public String toString() {
-		return "Libro [titulo=" + titulo + ", autor=" + autor + ", numPaginas=" + numPaginas + "]";
+		return "Libro [titulo=" + titulo + ", autor=" + autor + ", numPaginas=" + numPaginas + ", getPrecio()="
+				+ getPrecio() + "€]";
 	}
-	
-	/*Sin especificar == packages como calificador de acceso*/
+
+	/* Sin especificar == packages como calificador de acceso */
 	void imprimir() {
-		
+
 		System.out.println("Imprimiendo...");
 	}
-	
-	
-	
-	
+
+	public float getPrecio() {
+
+		float resul = 0;
+
+		resul = (float) (numPaginas * 0.2);
+
+		if (resul < Vendible.PRECIO_MINIMO) {
+
+			resul = 0;
+		}
+
+		return resul;
+
+	}
+
 }
