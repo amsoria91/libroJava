@@ -1,9 +1,11 @@
 package com.ipartek.formacion.javalibro.pojo;
 
+import java.util.ArrayList;
+
 import com.ipartek.formacion.javalibro.excepciones.ParticipanteException;
 import com.ipartek.formacion.javalibro.pojo.interfaces.Imprimible;
 
-public class Participante implements Imprimible{
+public class Participante implements Imprimible {
 
 	// Atributos
 
@@ -106,7 +108,7 @@ public class Participante implements Imprimible{
 		return "Participante [nombre=" + nombre + ", usuarioGit=" + usuarioGit + ", email=" + email + ", trabajador="
 				+ trabajador + ", edad=" + edad + "]";
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

@@ -1,5 +1,7 @@
 package com.ipartek.formacion.javalibro.pojo;
 
+import java.util.ArrayList;
+
 import com.ipartek.formacion.javalibro.pojo.interfaces.Imprimible;
 import com.ipartek.formacion.javalibro.pojo.interfaces.Vendible;
 
@@ -73,5 +75,7 @@ public class Libro implements Imprimible, Vendible {
 		return resul;
 
 	}
+	
+	
 
 }
