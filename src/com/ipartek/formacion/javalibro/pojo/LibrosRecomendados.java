@@ -8,6 +8,7 @@ public class LibrosRecomendados {
 		l.setAutor("Gabriel Garcia");
 		l.setNumPaginas(307);
 		l.getPrecio();
+		l.metodoProtegido();
 		
 		
 		LibroElectronico le = new LibroElectronico("Años Salvajes");
@@ -16,7 +17,8 @@ public class LibrosRecomendados {
 		le.setTamanyo(23);
 		le.setNumPaginas(523);
 		le.getPrecio();
-		
+		le.metodoProtegido();
+				
 		LibroPapel lp= new LibroPapel("Papillón");
 		
 		lp.setAutor("Henri Charriere");

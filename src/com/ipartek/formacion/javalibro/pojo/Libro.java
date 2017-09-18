@@ -75,6 +75,14 @@ public class Libro implements Imprimible, Vendible {
 		return resul;
 
 	}
+	/*
+	 *  Se puede acceder desde la propia clase, desde el mismo "package" o desde otro (siendo clase hija o subclase) y desde cualquier "subclase" o "clase hija", pero no se puede ver desde una clase de otro "package".
+	 */
+	protected void metodoProtegido() {
+		
+		System.out.println("Soy un metodo protegido");
+	}
+	
 	
 	
 
