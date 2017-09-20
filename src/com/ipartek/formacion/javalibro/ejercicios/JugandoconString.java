@@ -100,7 +100,7 @@ public class JugandoconString {
 			
 			index=lorem.indexOf(palabraAt);
 			
-			if(index!=-1) {
+			if((lorem.indexOf(palabraAt))!=-1) {
 				
 				contadorAt++;
 				lorem = lorem.substring(index);
