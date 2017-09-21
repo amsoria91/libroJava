@@ -7,6 +7,7 @@ public class Cancion {
 	private String titulo;
 	private String artista;
 	private String minutos;
+	private long id;
 	
 	
 	
@@ -16,6 +17,7 @@ public class Cancion {
 		this.titulo = titulo;
 		this.artista = artista;
 		this.minutos = minutos;
+		this.id=-1;
 	}
 
 	public String getTitulo() {
@@ -42,6 +44,14 @@ public class Cancion {
 		this.minutos = minutos;
 	}
 	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public String mostrarDetalles() {
 		
 		String resul="Titulo\t"+this.getTitulo()+"\tArtista\t\t"+this.getArtista()+"\tDuracion\t"+this.minutos;
@@ -66,6 +76,11 @@ public class Cancion {
 		int resul=0;
 		
 		return resul;
+	}
+
+	@Override
+	public String toString() {
+		return "Cancion [titulo=" + titulo + ", artista=" + artista + ", minutos=" + minutos + ", id=" + id + "]";
 	}
 	
 }

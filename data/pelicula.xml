@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Final del Prologo (opcional) -->
+
+
+<!-- Cuerpo -->
+
+<peliculas>
+	<pelicula id="123">
+		<titulo>El cabo del miedo</titulo>
+		<writer>Escritor1</writer>
+		<writer>Escritor2</writer>
+	</pelicula>
+
+	<pelicula id="124">
+		<titulo>It Remake</titulo>
+		<writer>Stephen King</writer>
+	</pelicula>
+</peliculas>
