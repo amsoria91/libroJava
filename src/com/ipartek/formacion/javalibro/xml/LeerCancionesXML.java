@@ -32,8 +32,8 @@ public class LeerCancionesXML {
 
 		// parsear el fichero XML
 		try {
-			
-			//abrir documento xml
+
+			// abrir documento xml
 			File file = new File(CANCIONES_XML);
 			DocumentBuilderFactory factoria = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = factoria.newDocumentBuilder();
@@ -42,30 +42,24 @@ public class LeerCancionesXML {
 			// System.out.println("Root element :" +
 			// doc.getDocumentElement().getNodeName());
 
-			
-			//cojemos todos los elementos por el nombre del tag
+			// cojemos todos los elementos por el nombre del tag
 			NodeList nCanciones = doc.getElementsByTagName("cancion");
 			Cancion c = null;
 			Element element = null;
-			
-			//recorremos la lista
+
+			// recorremos la lista
 			for (int i = 0; i < nCanciones.getLength(); i++) {
-				
-				//de cada nodo,lo convierto en un elemento
+
+				// de cada nodo,lo convierto en un elemento
 				element = (Element) nCanciones.item(i);
-				//System.out.println(element.getAttribute("id"));
-				String idString=(element.getAttribute("id"));
-				String nombre = element.getElementsByTagName("nombre")
-						.item(0).getTextContent();
-				String artista = element.getElementsByTagName("artista")
-						.item(0).getTextContent();
-				String duracion = element.getElementsByTagName("duracion")
-						.item(0).getTextContent();
-				
-				long id= Long.parseLong(idString);
-				
-				c=new Cancion(nombre,artista,duracion);
-				c.setId(id);
+				// System.out.println(element.getAttribute("id"));
+				String idString = (element.getAttribute("id"));
+				String nombre = element.getElementsByTagName("nombre").item(0).getTextContent();
+				String artista = element.getElementsByTagName("artista").item(0).getTextContent();
+				String duracion = element.getElementsByTagName("duracion").item(0).getTextContent();
+
+				c = new Cancion(nombre, artista, duracion);
+				c.setId(Long.parseLong(idString));
 				canciones.add(c);
 
 			}
