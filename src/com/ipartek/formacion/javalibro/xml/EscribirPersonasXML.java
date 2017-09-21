@@ -44,36 +44,29 @@ public class EscribirPersonasXML {
 			Element rootElement = doc.createElement("personas");
 			doc.appendChild(rootElement);
 
-			//conseguir un ArrayList<Personas> a partir del fichero de texto
-			//un bucle para todas las personas
-
-		/*	for (int i = 0; i < ListarPersonas.getArrayListPersonas().size(); i++) {
-
-				System.out.println(ListarPersonas.getArrayListPersonas().get(i));
-				
-
-			}*/
-
-			
-
+			// conseguir un ArrayList<Personas> a partir del fichero de texto
+			// un bucle para todas las personas
 			// añadir Elementos Persona al nodo raiz
 			Element ePersona = doc.createElement("persona");
 			Element eNombre = doc.createElement("nombre");
-			Element eApel1= doc.createElement("apellido1");
+			Element eApel1 = doc.createElement("apellido1");
 			Element eApel2 = doc.createElement("apellido2");
-			Element edad= doc.createElement("edad");
+			Element edad = doc.createElement("edad");
 			Element email = doc.createElement("email");
-			Element dni= doc.createElement("dni");
+			Element dni = doc.createElement("dni");
 			Element rol = doc.createElement("rol");
-			
-			eNombre.setTextContent("Ted");
-			eApel1.setTextContent("Upton");
-			eApel2.setTextContent("Sant Andreu De La Barca");
-			edad.setTextContent("8");
-			email.setTextContent("tedfupton@mailinator.com");
-			dni.setTextContent("12277015Y");
-			rol.setTextContent("TRABAJADOR");
-			
+
+			for (int i = 0; i < ListarPersonas.getArrayListPersonas().size(); i++) {
+
+				eNombre.setTextContent("Ted");
+				eApel1.setTextContent("Upton");
+				eApel2.setTextContent("Sant Andreu De La Barca");
+				edad.setTextContent("8");
+				email.setTextContent("tedfupton@mailinator.com");
+				dni.setTextContent("12277015Y");
+				rol.setTextContent("TRABAJADOR");
+
+			}
 
 			// TODO resto de campos o elementos
 			ePersona.appendChild(eNombre);
