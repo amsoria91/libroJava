@@ -53,7 +53,7 @@ public class ReescribirPersonasEstado {
 
 			while ((linea = br.readLine()) != null) {
 			
-				contLineas++;
+				//contLineas++;
 				
 				campos = linea.split(",");
 				try {

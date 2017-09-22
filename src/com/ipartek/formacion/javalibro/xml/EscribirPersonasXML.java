@@ -35,6 +35,7 @@ import com.ipartek.formacion.javalibro.ficheros.ListarPersonas;
 public class EscribirPersonasXML {
 
 	public static void main(String[] args) {
+		
 		try {
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -44,50 +45,53 @@ public class EscribirPersonasXML {
 			Element rootElement = doc.createElement("personas");
 			doc.appendChild(rootElement);
 
-			// conseguir un ArrayList<Personas> a partir del fichero de texto
-			// un bucle para todas las personas
-			// añadir Elementos Persona al nodo raiz
-			Element ePersona = doc.createElement("persona");
-			Element eNombre = doc.createElement("nombre");
-			Element eApel1 = doc.createElement("apellido1");
-			Element eApel2 = doc.createElement("apellido2");
-			Element edad = doc.createElement("edad");
-			Element email = doc.createElement("email");
-			Element dni = doc.createElement("dni");
-			Element rol = doc.createElement("rol");
-
+			// conseguimos un ArrayList<Personas> a partir del fichero de texto(con metodo getArrayListPersonas()).
+			//Recorremos ArrayList de Personas
+			// Recorremos el ArrayList de Personas
+			// Añadimos elementos Persona al nodo raiz
 			for (int i = 0; i < ListarPersonas.getArrayListPersonas().size(); i++) {
 
-				eNombre.setTextContent("Ted");
-				eApel1.setTextContent("Upton");
-				eApel2.setTextContent("Sant Andreu De La Barca");
-				edad.setTextContent("8");
-				email.setTextContent("tedfupton@mailinator.com");
-				dni.setTextContent("12277015Y");
-				rol.setTextContent("TRABAJADOR");
-
-			}
-
-			// TODO resto de campos o elementos
-			ePersona.appendChild(eNombre);
-			ePersona.appendChild(eApel1);
-			ePersona.appendChild(eApel2);
-			ePersona.appendChild(edad);
-			ePersona.appendChild(email);
-			ePersona.appendChild(dni);
-			ePersona.appendChild(rol);
-			rootElement.appendChild(ePersona);
-
-			// guardar en el fichero
+				Element ePersona = doc.createElement("persona");
+				Element eNombre = doc.createElement("nombre");
+				Element eApel1 = doc.createElement("apellido1");
+				Element eApel2 = doc.createElement("apellido2");
+				Element edad = doc.createElement("edad");
+				Element email = doc.createElement("email");
+				Element dni = doc.createElement("dni");
+				Element rol = doc.createElement("rol");
+				
+				
+				eNombre.setTextContent(ListarPersonas.getArrayListPersonas().get(i).getNombre());
+				eApel1.setTextContent(ListarPersonas.getArrayListPersonas().get(i).getApellido1());
+				eApel2.setTextContent(ListarPersonas.getArrayListPersonas().get(i).getApellido2());
+				edad.setTextContent(Integer.toString(ListarPersonas.getArrayListPersonas().get(i).getEdad()));
+				email.setTextContent(ListarPersonas.getArrayListPersonas().get(i).getEmail());
+				dni.setTextContent(ListarPersonas.getArrayListPersonas().get(i).getDni());
+				rol.setTextContent(ListarPersonas.getArrayListPersonas().get(i).getPuesto());
+				
+				// TODO resto de campos o elementos
+				ePersona.appendChild(eNombre);
+				ePersona.appendChild(eApel1);
+				ePersona.appendChild(eApel2);
+				ePersona.appendChild(edad);
+				ePersona.appendChild(email);
+				ePersona.appendChild(dni);
+				ePersona.appendChild(rol);
+				
+				rootElement.appendChild(ePersona);
+				
+			}//FIN FOR RECORRER ARRAY 
+			// Guardamos en el fichero
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
 			DOMSource source = new DOMSource(doc);
 			StreamResult result = new StreamResult(new File("data\\personas.xml"));
 			transformer.transform(source, result);
 
-		} catch (Exception e) {
+		} //FIN DEL TRY
+		catch (Exception e) {
 			// TODO: handle exception
-		}
+		}//FIN DEL CATCH
 	}
 
 }
