@@ -13,9 +13,9 @@ import com.ipartek.formacion.javalibro.pojo.Persona;
 
 public class ReescribirPersonasEstado {
 
-	static final String PATH_FICHERO_PERSONAS = "C:\\desarrolloNuevo\\personas.txt";
-	static final String PATH_FICHERO_PERSONASOK = "C:\\desarrolloNuevo\\personasError.txt";
-	static final String PATH_FICHERO_PERSONASERROR = "C:\\desarrolloNuevo\\personasOk.txt";
+	static final String PATH_FICHERO_PERSONAS = "data\\personasSimpleEjer1.txt";
+	static final String PATH_FICHERO_PERSONASOK = "C:\\desarrolloNuevo\\personasOk.txt";
+	static final String PATH_FICHERO_PERSONASERROR = "C:\\desarrolloNuevo\\personasError.txt";
 	static final int CAMPOS_NOMBRE = 0;
 	static final int CAMPOS_APE1 = 1;
 	static final int CAMPOS_APE2 = 2;
@@ -39,24 +39,28 @@ public class ReescribirPersonasEstado {
 		BufferedWriter bwMal = null;
 
 		try {
+			
+			//LEEMOS FICHERO DE PERSONAS
 			fr = new FileReader(PATH_FICHERO_PERSONAS);
 			br = new BufferedReader(fr);
-
+			
+			//FILE Y BUFFER READER PARA ESCRIBIR EN DISTINTOS FICHEROS
 			fwOk = new FileWriter(PATH_FICHERO_PERSONASOK);
-
-			fwMal = new FileWriter(PATH_FICHERO_PERSONASERROR);
 			bwOk = new BufferedWriter(fwOk);
+			fwMal = new FileWriter(PATH_FICHERO_PERSONASERROR);
 			bwMal = new BufferedWriter(fwMal);
+			
 			String linea = "";
-			Persona p = null;
+			
 			String[] campos;
+			Persona p=null;
 
 			while ((linea = br.readLine()) != null) {
-			
-				//contLineas++;
 				
+				contLineas++;
 				campos = linea.split(",");
 				try {
+					
 					if (campos.length == NUM_CAMPOS_LINEA) {
 
 						p = new Persona(campos[CAMPOS_NOMBRE], campos[CAMPOS_APE1], campos[CAMPOS_APE2],
@@ -68,22 +72,25 @@ public class ReescribirPersonasEstado {
 						persOk++;
 						
 					}//FIN DEL IF
-					else if (campos.length != NUM_CAMPOS_LINEA) {
-						
-						bwMal.write(linea);
+					
+					else {
+						bwMal.write(linea + "\r\n");
+						bwMal.flush();
+						bwMal.newLine();
 						lineasIncompletas++;
-						
-					} // FIN DEL IF
-
+					} 
+					
 				} // FIN TRY PERSONA
 				catch (PersonaException | NumberFormatException e) {
-					
-
+						
+						
 						bwMal.write(linea + "\r\n");
 						bwMal.flush();
 						persError++;
 						// TODO Auto-generated catch block
 						e.printStackTrace();
+						
+						
 					
 				} // FIN CATCH PERSONA
 
